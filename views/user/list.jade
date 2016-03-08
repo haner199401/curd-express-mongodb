@@ -1,0 +1,34 @@
+//
+   Created by haner on 16/3/7.
+
+extends ../layout
+
+block content
+    .container
+
+        h1 用户#{title}
+        .row
+            .col-md-12
+                p
+                    a.btn.btn-primary(role="button",href="./users/add/page") 添加用户
+
+        table.table.table-bordered
+            tr
+            each t in ['','姓名','年龄','性别','邮箱','操作']
+                th= t
+            each user,index in users
+                tr
+                    td= index+1
+                    td= user.username
+                    td= user.age
+                    td= user.sex
+                    td= user.email
+                    td
+                        .btn-group
+                            button.btn.btn-danger.btn-sm.dropdown-toggle(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 操作
+                                span.caret
+                            ul.dropdown-menu
+                                li
+                                    a(href="/users/user/#{user.id}") 查看/修改
+                                li
+                                    a(href="/users/del/user/#{user.id}") 删除
