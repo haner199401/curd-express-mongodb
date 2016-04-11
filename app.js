@@ -22,6 +22,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//工具存储为全局中，方便模板渲染使用
 app.locals._ = lodash;
 
 /**

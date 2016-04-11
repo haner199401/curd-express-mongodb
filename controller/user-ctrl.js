@@ -3,6 +3,7 @@
  */
 
 var UserModel = require('../model/user');
+var Q = require('q');
 
 var UserCtrl = {};
 

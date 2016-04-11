@@ -57,6 +57,7 @@ db.once('open',console.log.bind(console,'Connect Successful!!!'));
 
 
 var UserSchema = new Schema({
+    uid:Schema.Types.ObjectId,
     email: {
         type: String,
         index: true
@@ -73,7 +74,7 @@ var UserSchema = new Schema({
     updateDate:{
         type: Date, default: Date.now
     }
-});
+},{versionKey:false});
 
 
 /**
